@@ -23,7 +23,7 @@ env:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: gh-runners-poc-scale-set-2
     permissions:
       contents: read
       packages: write
