@@ -18,8 +18,10 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  ECR_REPOSITORY: universidade-nos-perifericos
   AWS_REGION: us-east-1
+  # ECR_REPOSITORY: universidade-nos-perifericos
+  ECR_REPOSITORY: melhorias-habitacionais
+  AWS_ACCOUNT_ID: 298680963177
 
 jobs:
   build:
