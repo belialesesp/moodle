@@ -19,6 +19,7 @@ env:
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
   ECR_REPOSITORY: universidade-nos-perifericos
+  AWS_REGION: us-east-1
 
 jobs:
   build:
@@ -60,8 +61,6 @@ jobs:
       - name: Login na Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
-        with:
-          region: us-east-1
         
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
