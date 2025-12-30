@@ -75,14 +75,9 @@ jobs:
         with:
           context: ./container
           file: ./container/Dockerfile
-          push: false
+          push: true
           tags: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
 
-      - name: Build, tag, e push da imagem para Amazon ECR
-        env:
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker push  ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
